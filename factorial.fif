@@ -1,0 +1,2 @@
+// factorial
+{ ?dup { dup 1- @' fact } { 1 } cond } : fact

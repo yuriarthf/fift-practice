@@ -1,0 +1,6 @@
+"utils.fif" include
+
+// fibonacci
+{ dup 1 > { 1- dup @' fibo swap 1- @' fibo + } if } : fibo
+{ dup 0< abort"N should be greater or equal to ZERO" fibo } : safe-fibo
+{ ."The " dup ord space ."term of the Fibonnaci sequence is " safe-fibo ._ ."." } : print-fibo

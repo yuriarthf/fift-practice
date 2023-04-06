@@ -1,0 +1,2 @@
+// miscellaneous
+{ dup 10 mod dup 3 > { drop ._ ."th" } { dup 3 = { drop ._ ."rd" } { 2 = { ._ ."nd" } { ._ ."st" } cond } cond } cond } : ord

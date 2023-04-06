@@ -1,0 +1,59 @@
+variable 'items
+dictnew 'items !
+
+variable 'key
+0 'key !
+
+{
+  'key @
+  tuck
+  'items @
+  256
+  udict!+
+  not
+  abort"Element already exist"
+  'items !
+  1+
+  'key !
+} : add-item
+
+{
+  $>smca
+  not
+  abort"Invalid address"
+  drop
+  <b
+  -rot
+  Addr,
+  b>
+  'key @
+  tuck
+  'item @
+  256
+  b>udict!+
+  not
+  abort"Element already exist
+  'item !
+  1+
+  'key !
+} : add-addr
+
+{
+  'item @
+  256
+  udict@
+  not
+  abort"Element doesn't exist"
+} : retrieve-item
+
+{
+  0
+  {
+    dup
+    retrieve-item
+    csr.
+    1+
+  } 'key @ times
+} : retrieve-items
+
+// b{10001} add-item
